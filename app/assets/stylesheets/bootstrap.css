@@ -5772,3 +5772,81 @@ a.badge:hover {
 .affix {
   position: fixed;
 }
+
+
+@font-face { 
+  font-family: 'MetaPlus';
+  src: url("/assets/fonts/MetaPlus.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+.green {
+  color: #4BBA5D;
+}
+
+.top_header{
+  padding-top: 30px;
+  padding-bottom: 20px;
+  border-bottom-style: solid;
+  border-bottom-color: #CDCDCD;
+}
+
+.header_icons{
+  color:#B6B6B6;
+  font-size: 18px;
+}
+
+.header_icons:hover{
+  color: #4BBA5D;
+}
+
+.dashboard_icon img{
+  padding-left: 21px;
+}
+
+.account_icon img{
+  padding-left: 10px;
+}
+
+.head_logo {
+  padding-left: 130px;
+}
+
+.contract-background {
+  background-color: #F4F4F4;
+  z-index: -1;
+}
+
+.contract-nav {
+  background-color: #FFFFFF;
+  margin-left: 11%;
+  margin-top: 30px;
+  width: 220px;
+  border-style: solid;
+  
+}
+
+.contract-form {
+  background-color: #FFFFFF;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

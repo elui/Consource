@@ -1,4 +1,6 @@
 Consource::Application.routes.draw do
+  get "contract/form"
+
   get "home/index"
 
   # The priority is based upon order of creation:

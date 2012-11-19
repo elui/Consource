@@ -2,12 +2,26 @@
 <html>
 <head>
   <title>Consource</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= stylesheet_link_tag "bootstrap.css", :media=> "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+  
+	<div class="row-fluid top_header">
+  		<div class="span4 head_logo">
+  			<img src="/assets/congora_logo.jpg"/>
+  		</div>
+  		<div class="span1 header_icons dashboard_icon offset5">
+  			<img src="/assets/dashboard_icon.jpg"/>
+  			<p>Dashboard</p>
+  		</div>
+  		<div class="span1 header_icons account_icon">
+  			<img src="/assets/account_icon.jpg"/>
+  			<p>Account</p>
+  		</div>
+	</div>
+	<!--<img src="/assets/6_Contract_MainExpanded.jpg"/>-->	
 <%= yield %>
 
 </body>
