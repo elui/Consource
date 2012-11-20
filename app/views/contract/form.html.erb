@@ -5,17 +5,94 @@
 	<div class="row">
 		<div class="span2 contract-nav">
 			<ul class="nav nav-list">
-				<li class="active">
-					<a href="#">General</a>
+				<li class="nav-header nav-category-header">
+					<%=@location%>: <%=@plan_type%>
+					<img src="/assets/category_divider.png"/>
+
 				</li>
-				<li>
-					<a href="#">Emergency & Office Visits</a>
-				</li>
+				
+				<% @categories.each do |category| %>
+					<li>
+						<a class="nav-category" href="#"><%=category%></a>
+						<!-- <div class="category-divider"></div> -->
+					</li>
+				<% end %>
 			</ul>
 		</div>
-		<div class="span10 contract-form">
-			hi
+		<div class="span9 contract-form">
+			<table class="contract-table">
+				<thead>
+					<tr>
+						<th class="category-spec-header"><%=@category%></th>
+					</tr>
+				</thead>
+				<tbody>
+					<% @category_specs.each do |spec| %>
+						<tr class="contract-row">
+							<td class="category-spec">
+								<a href="#"><%=spec%></a>
+							</td>
+							
+							<td id="<%=spec%>" class="contract-buttons">
+								<div class="btn-group">
+									<button class="btn" onclick="ButtonToSet('<%=spec%>')">Exact</button>
+									<button class="btn">Max</button>
+									<button class="btn notcovered">Not Covered</button>
+								</div>
+							</td>
+							
+							<!-- <td>
+								<div class="poohead">
+									<table class="set-values-button">
+										<tr>
+											<td>
+												<img class="button-icon" src="/assets/dollar_icon.png"/>
+											</td>
+											<td>
+												<img class="button-icon" src="/assets/percent_icon.png"/>
+											</td>
+											<td>
+												<form>
+													<input class="copay-amount" type="text" name="amount">
+												</form>
+											</td>
+											<td>
+												<img class="button-icon" src="/assets/check_icon.png"/>
+											</td>
+											<td>
+												<img class="button-icon" src="/assets/x_icon.png"/>
+											</td>
+
+										</tr>
+									</table>
+
+								</div>
+							</td> -->
+							
+							
+						</tr>
+					<% end %>
+				</tbody>
+			</table>
 		</div>
 	</div>
 </div>
+<script type="text/javascript">
+	//<![CDATA[
+	function ButtonToSet(td_id){
+	this.td_id = document.getElementById(td_id);
+	this.td_id.removeAttribute("class");
+	var td_id_string = "'"+td_id+"'";
+	this.td_id.innerHTML = '<div class="poohead"><table class="set-values-button"><tr><td><img class="button-icon" src="/assets/dollar_icon.png"/></td><td><img class="button-icon" src="/assets/percent_icon.png"/></td><td><form><input class="copay-amount" type="text" name="amount"></form></td><td><img class="button-icon" src="/assets/check_icon.png"/></td><td><img class="button-icon" src="/assets/x_icon.png" onclick="SetToButton('+td_id_string+')"/></td></tr></table></div>';
+	};
+	function SetToButton(td_id){
+		this.td_id = document.getElementById(td_id);
+		this.td_id.setAttribute("class","contract-buttons");
+		this.td_id.innerHTML = "poop";
+		var td_id_string = "'"+td_id+"'";
+		this.td_id.innerHTML = '<div class="btn-group"><button class="btn" onclick="ButtonToSet('+td_id_string+')">Exact</button><button class="btn">Max</button><button class="btn notcovered">Not Covered</button></div>';
+	};
+	
+	//]]>
+</script>
 <img src="/assets/6_Contract_MainExpanded.jpg"/>
