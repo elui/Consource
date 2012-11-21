@@ -5797,7 +5797,7 @@ a.badge:hover {
 }
 
 .contract-background {
-  background-color: #F4F4F4;
+  background-image: url(/assets/texture_background.png);
   z-index: -1;
 }
 
@@ -5808,6 +5808,14 @@ a.badge:hover {
   width: 220px;
   border-style: solid;
   border-color: #ECECEC;
+
+  border: 1px solid lightGrey;
+  border-radius: 5px;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.3);
+  /*background: #E2EDE1;*/
+ 
+/**/
+
   
 }
 
@@ -5846,8 +5854,9 @@ a.badge:hover {
 }
 
 .contract-form {
-  border-style: solid;
-  border-color: #ECECEC;
+  border: 1px solid lightGrey;
+  border-radius: 5px;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.3);
   margin-top: 30px;
 }
 .category-spec{
@@ -6100,4 +6109,8 @@ td > .login-input{
   font-size: 18px;
   color: #E80923;
   display:none;
+}
+
+.glyphs {
+  background-image: url(/assets/glyphicons-halflings.png);
 }
