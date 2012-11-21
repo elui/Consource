@@ -5772,8 +5772,8 @@ a.badge:hover {
   top: 0px;
 }
 #logo_img{
-  max-width: 100%;
-
+  
+  min-width: 300px;
 }
 .header_text{
   color:#B6B6B6;
@@ -5991,3 +5991,37 @@ input[type="color"],
           border-radius: 3px;
 }
 
+
+.splash {
+  margin-top: 225px;
+}
+
+.splash-background {
+  background-image: url(/assets/splash_background4.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-background-size: cover;
+  background-color: #F7F7F7;
+  background-position: center top;
+
+}
+
+.splash-btn {
+  margin-top: 20px;
+
+  background-color: hsl(53, 7%, 38%) !important;
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#a09e91", endColorstr="#67665a");
+  background-image: -khtml-gradient(linear, left top, left bottom, from(#a09e91), to(#67665a));
+  background-image: -moz-linear-gradient(top, #a09e91, #67665a);
+  background-image: -ms-linear-gradient(top, #a09e91, #67665a);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #a09e91), color-stop(100%, #67665a));
+  background-image: -webkit-linear-gradient(top, #a09e91, #67665a);
+  background-image: -o-linear-gradient(top, #a09e91, #67665a);
+  background-image: linear-gradient(#a09e91, #67665a);
+  border-color: #67665a #67665a hsl(53, 7%, 32.5%);
+  color: #fff !important;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.36);
+  -webkit-font-smoothing: antialiased;
+}
+Some Examples! (you can probably do better than these, though)
