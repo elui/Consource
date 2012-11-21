@@ -82,6 +82,7 @@
 	// }));
 	$('#login-btn').click(function(){
 		$('.invalid-login').css({"display":"block"});
+		$('.login-input').val("");
 	})
 
 	$('.splash-icon').click(function(){
@@ -97,7 +98,8 @@
 		$('#splash-container').animate({height:'350px'},200);
 		$('.enter-login').css({"display":"none"});
 		$('.click-splash').css({"display":"block"});
-		$('.invalid-login').css({"display":"none"})
+		$('.invalid-login').css({"display":"none"});
+		$('.login-input').val("");
 		// .html('<div class="span2 offset3 splash-icon"><img src="/assets/employer_logo.jpg"/><p>Employer</p></div><div class="span2 offset2 splash-icon"id="managed-care-icon"><img src="/assets/managed_care_logo.jpg"/><p>Insurer</p></div>');
 
 	});
