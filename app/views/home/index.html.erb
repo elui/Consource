@@ -3,37 +3,107 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js" type="text/javascript"></script>
   <title>Consource</title>
+  <link href='http://fonts.googleapis.com/css?family=Karla:400,700' rel='stylesheet' type='text/css'>
+    
+ 
+
   <%= stylesheet_link_tag "bootstrap.css", :media=> "all" %>
-  <%= javascript_include_tag "contract" %>
   <%= csrf_meta_tags %>
 </head>
 <body class="splash-background">
-	<div class="container">	
+	
 	<div class="row-fluid splash">
-  		<div class="span4 offset4">
-  			<img id="logo_img" src="/assets/congora_logo.jpg"/>
+  		<div class="span4 offset3" id="splash-container">
+  			<div class="row">
+  				<div class="span4 offset2">
+	  				<img id="splash-logo" src="/assets/congora_logo.jpg"/>
+	  			</div>
+  			</div>
+  			<div class="row splash-contents enter-login">
+  				<div class="span12 offset1">
+  					<table class="login-field">
+  						<tr class="login-row">
+  							<td>Username </td>
+  							<td><input class="login-input" type="text"/></td>
+  						</tr>
+  						<tr>
+  							<td>Password </td>
+  							<td><input class="login-input" type="password"/></td>
+  						</tr>
+  						<tr>
+  							<td></td>
+  							<td class="splash-login-btn">
+  								<button id="login-btn" class="btn btn-success btn-large">
+  									Log In
+  								</button>
+  								<button id="cancel-button" class="btn btn-success btn-large">
+  									Cancel
+  								</button>
+  							</td>
+  						</tr>
+
+
+  					</table>
+  					<p></p>
+  					<div class="invalid-login">Incorrect Username or Password</div>
+  				</div>
+  			</div>
+  			<div class="row splash-contents click-splash">
+  				<div class="span2 offset3 splash-icon">
+  					<img src="/assets/employer_logo.jpg"/>
+  					<p>Employer</p>
+  				</div>
+  				<div class="span2 offset2 splash-icon" id="managed-care-icon">
+  					<img src="/assets/managed_care_logo.jpg"/>
+  					<p>Insurer</p>
+  				</div>
+  			</div>
   		</div>
   		
 	</div>
-	<div class="row-fluid">
-		<div class="span2 offset3">
-			<a class="splash-btn btn btn-primary btn-large">
-				For Employers
-			</a>
-			
-		</div>
-		<div class="span2 offset2">
-			<a class="splash-btn btn btn-primary btn-large">
-				For Providers
-			</a>
-		</div>
-
-		
-	</div>
-	</div>
+	
+	
 	<!-- <img src="/assets/6_Contract_MainExpanded.jpg"/>	 -->
 
 
 </body>
+
+<script type="text/javascript">
+	//<![CDATA[
+
+
+	// jQuery(document.ready(function(){
+	// 	$('img').click(function(event){
+	// 		alert("hihihihi");
+	// 	});	
+
+	// }));
+	$('#login-btn').click(function(){
+		$('.invalid-login').css({"display":"block"});
+	})
+
+	$('.splash-icon').click(function(){
+		$('#splash-container').animate({height:'400px'},200);
+		$('.click-splash').css({"display":"none"});
+		$('.enter-login').css({"display":"block"});
+		// $('.splash-icon').remove();
+		// $('.splash-contents').html('<div class="span12 offset1"><table class="login-field"><tr class="login-row"><td>Username </td><td><input class="login-input" type="text"/></td></tr><tr><td>Password </td><td><input class="login-input" type="password"/></td></tr><tr><td></td><td class="splash-login-btn"><button id="splash-login" class="btn btn-success btn-large">Log In</button><button id="splash-cancel" class="btn btn-success btn-large">Cancel</button></td></tr></table></div>');
+	});	
+
+	
+	$('#splash-logo,#cancel-button').click(function(){
+		$('#splash-container').animate({height:'350px'},200);
+		$('.enter-login').css({"display":"none"});
+		$('.click-splash').css({"display":"block"});
+		$('.invalid-login').css({"display":"none"})
+		// .html('<div class="span2 offset3 splash-icon"><img src="/assets/employer_logo.jpg"/><p>Employer</p></div><div class="span2 offset2 splash-icon"id="managed-care-icon"><img src="/assets/managed_care_logo.jpg"/><p>Insurer</p></div>');
+
+	});
+	
+
+	
+	//]]>
+</script>
 </html>
